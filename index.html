@@ -2,6 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>😔😔</title>
 
 <style>
@@ -42,16 +43,24 @@
     const noBtn = document.getElementById("no");
     const yesBtn = document.getElementById("yes");
 
-    // NO 버튼 도망가기
-    noBtn.addEventListener("mouseover", () => {
-        const x = Math.random() * window.innerWidth - 100;
-        const y = Math.random() * window.innerHeight - 50;
+    function moveNoButton() {
+        const x = Math.random() * (window.innerWidth - 100);
+        const y = Math.random() * (window.innerHeight - 50);
 
         noBtn.style.left = x + "px";
         noBtn.style.top = y + "px";
+    }
+
+    // PC (마우스)
+    noBtn.addEventListener("mouseover", moveNoButton);
+
+    // 모바일 (터치)
+    noBtn.addEventListener("touchstart", (e) => {
+        e.preventDefault(); // 터치 클릭 막기
+        moveNoButton();
     });
 
-    // YES 버튼 클릭 시
+    // YES 클릭
     yesBtn.addEventListener("click", () => {
         document.body.innerHTML = "<h1>정답!</h1>";
     });

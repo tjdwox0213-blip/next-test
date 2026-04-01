@@ -1,0 +1,13 @@
+/* 전체 배경과 기본 글꼴 설정 */
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 100px;
+}
+
+/* 제목 스타일 */
+h1 {
+    color: #333;
+    font-size: 40px;
+}
